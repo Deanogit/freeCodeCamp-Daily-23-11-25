@@ -20,6 +20,9 @@ function countCharacters(sentence) {
   // const filtered = array.filter(filterArray(array))
   // const filtered = array.filter(filter(array))
   console.log(filteredArray);
+  // arrange in alphabetical order
+  const sorted = filteredArray.sort();
+  console.log(sorted);
 
   return sentence;
 }
