@@ -31,6 +31,25 @@ function countCharacters(sentence) {
   // console.log(filteredArray)
   // arrange in alphabetical order
   const sorted = filteredArray.sort();
+  console.log(sorted);
+
+  const countPlease = sorted.reduce((a, v) => {
+    return {
+      ...a,
+      [v]: (a[v] || 0) + 1,
+    };
+  }, {});
+  console.log(countPlease);
+
+  // const arr = ['one', 'one', 'one', 'two', 'two', 'three'];
+
+  // const count = arr.reduce((accumulator, value) => {
+  //   return {
+  //     ...accumulator,
+  //    [value]: (accumulator[value] || 0) + 1,
+  //   };
+  // }, []);
+
   // console.log(sorted);
   // theres a simple way to get the value and number of instances...
   // count the number of instances letters in sorted
@@ -38,15 +57,15 @@ function countCharacters(sentence) {
   //   a === b
   //   }))
   // console.log(counted)
-  const obj = {};
-  sorted.forEach((e) => {
-    sorted[e] = (sorted[e] || 0) + 1;
-  });
-  let string = '';
-  for (const [key, value] of Object.entries(obj)) {
-    string = ` ${key} ${value}`;
-  }
-  console.log(string);
+  // const obj = {};
+  // sorted.forEach(e => {
+  //  sorted[e] = (sorted[e] || 0) + 1;
+  //})
+  // let string = "";
+  // for (const [key, value ] of Object.entries(obj)) {
+  //string = ` ${key} ${value}`
+  //console.log(` ${key} ${value}`)
+  //}
   // return sentence;
 }
 
@@ -79,3 +98,15 @@ function countCharacters(sentence) {
 // Expected output:
 // "a: some string"
 // "b: 42"
+
+// const arr = ['one', 'one', 'one', 'two', 'two', 'three'];
+
+// const count = arr.reduce((accumulator, value) => {
+//   return {
+//     ...accumulator,
+//    [value]: (accumulator[value] || 0) + 1,
+//   };
+// }, []);
+
+// 👇️ {one: 3, two: 2, three: 1}
+// console.log(count);
