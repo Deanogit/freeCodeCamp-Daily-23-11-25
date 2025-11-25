@@ -31,7 +31,7 @@ function countCharacters(sentence) {
   // console.log(filteredArray)
   // arrange in alphabetical order
   const sorted = filteredArray.sort();
-  console.log(sorted);
+  //console.log(sorted)
 
   const countPlease = sorted.reduce((a, v) => {
     return {
@@ -39,7 +39,21 @@ function countCharacters(sentence) {
       [v]: (a[v] || 0) + 1,
     };
   }, {});
-  console.log(countPlease);
+  // console.log(countPlease)
+  // const string = countPlease.forEach((e) => {
+  //  console.log(e)
+  // })
+
+  let string = [];
+  for (const [key, value] of Object.entries(countPlease)) {
+    console.log(key, value);
+    string.push(`${key} ${value}`);
+  }
+  console.log(string);
+  return string;
+
+  //const myMap = new Map(Object.entries(countPlease));
+  //console.log(myMap)
 
   // const arr = ['one', 'one', 'one', 'two', 'two', 'three'];
 
@@ -110,3 +124,5 @@ function countCharacters(sentence) {
 
 // 👇️ {one: 3, two: 2, three: 1}
 // console.log(count);
+
+// const myMap = new Map(Object.entries(fruits));
