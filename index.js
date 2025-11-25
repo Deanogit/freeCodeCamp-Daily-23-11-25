@@ -19,7 +19,7 @@ function countCharacters(sentence) {
   }
   const array = lowercase.split('');
   //const array = lowercase.split("");
-  console.log(array);
+  // console.log(array)
   const filteredArray = [];
   const filtered = array.map((x) => {
     if (regex.test(x)) {
@@ -28,13 +28,26 @@ function countCharacters(sentence) {
   });
   // const filtered = array.filter(filterArray(array))
   // const filtered = array.filter(filter(array))
-  console.log(filteredArray);
+  // console.log(filteredArray)
   // arrange in alphabetical order
   const sorted = filteredArray.sort();
-  console.log(sorted);
+  // console.log(sorted);
   // theres a simple way to get the value and number of instances...
-
-  return sentence;
+  // count the number of instances letters in sorted
+  // const counted = sorted.map((x) => x.reduce((a, b) => {
+  //   a === b
+  //   }))
+  // console.log(counted)
+  const obj = {};
+  sorted.forEach((e) => {
+    sorted[e] = (sorted[e] || 0) + 1;
+  });
+  let string = '';
+  for (const [key, value] of Object.entries(obj)) {
+    string = ` ${key} ${value}`;
+  }
+  console.log(string);
+  // return sentence;
 }
 
 // The filter() method creates a new array filled with elements that pass a test provided by a function.
@@ -42,3 +55,27 @@ function countCharacters(sentence) {
 // The filter() method does not execute the function for empty elements.
 
 // The filter() method does not change the original array.
+
+// const arr = ['one', 'one', 'one', 'two', 'two', 'three'];
+
+// const count = {};
+
+// arr.forEach(element => {
+//   count[element] = (count[element] || 0) + 1;
+// });
+
+// 👇️ {one: 3, two: 2, three: 1}
+// console.log(count);
+
+// const object = {
+//  a: "some string",
+//  b: 42,
+// };
+
+// for (const [key, value] of Object.entries(object)) {
+//   console.log(`${key}: ${value}`);
+// }
+
+// Expected output:
+// "a: some string"
+// "b: 42"
